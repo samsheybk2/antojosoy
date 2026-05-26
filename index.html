@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antojos O&amp;Y – Repostería Premium</title>
+  <meta name="description" content="Repostería artesanal premium. Pasteles de chocolate con fresas, postres personalizados y antojos que tu día merece." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="Antojos O&Y — Ir al inicio">
+          <span class="logo__icon">🍰</span>
+          <span class="logo__text">Antojos <span class="logo__highlight">O&amp;Y</span></span>
+      </a>
+      <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#especialidad" class="nav__link">Especialidad</a></li>
+          <li><a href="#galeria" class="nav__link">Galería</a></li>
+          <li><a href="#menu" class="nav__link">Menú</a></li>
+          <li><a href="#testimonios" class="nav__link">Reseñas</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo claro/oscuro">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__video" aria-hidden="true">
+        <div class="hero__slides" id="heroSlides"></div>
+        <div class="hero__overlay"></div>
+      </div>
+    </div>
+    <div class="container hero__content">
+      <span class="hero__badge">✨ Artesanal desde 2020</span>
+      <h1 class="hero__title">El antojo que<br />tu día merece</h1>
+      <p class="hero__subtitle">Chocolate artesanal, fresas naturales y el amor por lo bien hecho en cada bocado.</p>
+      <div class="hero__cta">
+        <a href="#menu" class="btn btn--primary btn--pulse">
+          <span>Ver Menú de Hoy</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#galeria" class="btn btn--ghost">
+          <span>Ver Galería</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Descubre</span>
+      <div class="hero__scroll-mouse"></div>
+    </div>
+  </section>
+
+  <!-- ========== ESPECIALIDAD (Parallax) ========== -->
+  <section class="especialidad" id="especialidad">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__tag">Nuestra Historia</span>
+        <h2 class="section-header__title">Nuestra <span class="text-highlight">Especialidad</span></h2>
+        <p class="section-header__desc">Cada pastel cuenta una historia de dedicación y sabor.</p>
+      </div>
+      <div class="especialidad__grid" id="parallaxContainer">
+        <div class="especialidad__card especialidad__card--text">
+          <div class="especialidad__story">
+            <span class="especialidad__year">📍 Since 2020</span>
+            <h3>Chocolate &amp; Fresas<br />Hechos con <span class="text-highlight">Amor</span></h3>
+            <p>
+              Nació de un antojo compartido: llevar a cada mesa la experiencia de un postre que no solo se vea
+              espectacular, sino que sepa a hogar. Seleccionamos cacao de origen, fresas frescas y los mejores
+              ingredientes para crear obras de arte comestibles.
+            </p>
+            <p>Cada capa, cada decoración, cada detalle está pensado para hacer de tu momento algo inolvidable.</p>
+            <a href="#menu" class="btn btn--primary">Descubrir Sabores</a>
+          </div>
+        </div>
+        <div class="especialidad__card especialidad__card--visual">
+          <div class="especialidad__slides" id="especialidadSlides"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TORTAS CARRUSEL ========== -->
+  <section class="tortas-carousel" id="tortasCarousel">
+    <div class="tortas-carousel__wrapper">
+      <button class="tortas-carousel__btn tortas-carousel__btn--prev" id="tortasPrev" aria-label="Retroceder">‹</button>
+      <button class="tortas-carousel__btn tortas-carousel__btn--next" id="tortasNext" aria-label="Adelantar">›</button>
+      <div class="tortas-carousel__track" id="tortasCarouselTrack"></div>
+    </div>
+  </section>
+
+  <!-- ========== TORTAS LIGHTBOX ========== -->
+  <div class="tortas-lightbox" id="tortasLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="tortas-lightbox__close" id="tortasLightboxClose">&times;</button>
+    <img src="" alt="" id="tortasLightboxImg" />
+  </div>
+
+  <!-- ========== GALERÍA ========== -->
+  <section class="galeria" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__tag">El Corazón Visual</span>
+        <h2 class="section-header__title">Galería de <span class="text-highlight">Antojos</span></h2>
+        <p class="section-header__desc">Explora nuestros postres a través de primeros planos llenos de textura y sabor.</p>
+      </div>
+      <div class="gallery__filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">Todo</button>
+        <button class="filter-btn" data-filter="pasteles">Pasteles</button>
+        <button class="filter-btn" data-filter="porciones">Porciones</button>
+        <button class="filter-btn" data-filter="fresas">Con Fresas</button>
+        <button class="filter-btn" data-filter="chocolate">Chocolate Puro</button>
+      </div>
+      <div class="gallery__grid" id="galleryGrid">
+        <!-- Items generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar lightbox">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <div class="lightbox__content">
+      <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+      <div class="lightbox__info" id="lightboxInfo">
+        <span class="lightbox__name"></span>
+        <button class="btn btn--primary btn--small">¡Lo quiero!</button>
+      </div>
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Siguiente">›</button>
+  </div>
+
+  <!-- ========== MENÚ / CARRUSEL ========== -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__tag">Elige tu Favorito</span>
+        <h2 class="section-header__title">Menú de <span class="text-highlight">Antojos</span></h2>
+        <p class="section-header__desc">Desliza, elige y enamórate. Cada tarjeta es una experiencia.</p>
+      </div>
+      <div class="carousel__wrapper">
+        <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Anterior">‹</button>
+        <div class="carousel" id="carousel">
+          <div class="carousel__track" id="carouselTrack">
+            <!-- Items generated by JS -->
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Siguiente">›</button>
+      </div>
+      <div class="carousel__dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <!-- ========== FLIP CARD OVERLAY ========== -->
+  <div class="flip-overlay" id="flipOverlay" aria-hidden="true">
+    <div class="flip-card-detail">
+      <button class="flip-card-detail__close" id="flipClose">&times;</button>
+      <div class="flip-card-detail__inner" id="flipDetailInner">
+        <div class="flip-card-detail__front">
+          <img src="" alt="" id="flipDetailImg" />
+          <h3 id="flipDetailName"></h3>
+          <p id="flipDetailDesc"></p>
+          <span class="flip-card-detail__price" id="flipDetailPrice"></span>
+        </div>
+        <div class="flip-card-detail__back">
+          <h3>Ingredientes</h3>
+          <ul id="flipDetailIngredients"></ul>
+          <p class="flip-card-detail__allergens"><strong>Alérgenos:</strong> <span id="flipDetailAllergens"></span></p>
+          <a href="#" class="btn btn--primary" id="flipDetailWhatsApp" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TESTIMONIOS / REDES ========== -->
+  <section class="testimonios" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__tag">Lo que dicen de nosotros</span>
+        <h2 class="section-header__title">Reseñas que <span class="text-highlight">Endulzan</span></h2>
+        <p class="section-header__desc">El amor por nuestro trabajo se refleja en cada comentario.</p>
+      </div>
+      <div class="testimonios__slider" id="testimoniosSlider">
+        <div class="testimonios__track" id="testimoniosTrack">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+
+      <div class="social-feed">
+        <h3 class="social-feed__title">Síguenos en <span class="text-highlight">Instagram</span></h3>
+        <div class="social-feed__grid" id="socialFeed">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTO FORM ========== -->
+  <section class="contacto-form" id="contacto-form">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__tag">Escríbenos</span>
+        <h2 class="section-header__title">¿Listo para tu <span class="text-highlight">Antojo</span>?</h2>
+        <p class="section-header__desc">Cuéntanos qué se te antoja y te responderemos al instante por WhatsApp.</p>
+      </div>
+      <form class="contacto-form__form" id="whatsappForm">
+        <div class="contacto-form__field">
+          <label for="contactName">Nombre</label>
+          <input type="text" id="contactName" placeholder="Tu nombre" required />
+        </div>
+        <div class="contacto-form__field">
+          <label for="contactProduct">Producto</label>
+          <select id="contactProduct">
+            <option value="">Selecciona un producto</option>
+            <option value="Pastel Clásico de Chocolate">Pastel Clásico de Chocolate</option>
+            <option value="Tarta de Fresas con Crema">Tarta de Fresas con Crema</option>
+            <option value="Chocolate Fundido Individual">Chocolate Fundido Individual</option>
+            <option value="Selva Negra">Selva Negra</option>
+            <option value="Personalizado">Personalizado</option>
+          </select>
+        </div>
+        <div class="contacto-form__field contacto-form__field--full">
+          <label for="contactMessage">Mensaje</label>
+          <textarea id="contactMessage" rows="3" placeholder="Describe tu antojo..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enviar por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contacto">
+    <div class="footer__drip" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" class="footer__drip-svg">
+        <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="currentColor"/>
+        <circle cx="180" cy="55" r="6" fill="currentColor"/>
+        <circle cx="420" cy="52" r="4" fill="currentColor"/>
+        <circle cx="680" cy="57" r="5" fill="currentColor"/>
+        <circle cx="920" cy="53" r="7" fill="currentColor"/>
+        <circle cx="1150" cy="56" r="4" fill="currentColor"/>
+        <circle cx="1320" cy="50" r="6" fill="currentColor"/>
+        <ellipse cx="280" cy="60" rx="8" ry="10" fill="currentColor"/>
+        <ellipse cx="780" cy="60" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="1060" cy="60" rx="7" ry="9" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__icon">🍰</span>
+          <span class="logo__text">Antojos <span class="logo__highlight">O&amp;Y</span></span>
+        </a>
+        <p>Repostería artesanal premium. Cada bocado es una experiencia única.</p>
+        <div class="footer__social">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👍</a>
+          <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+          <a href="https://wa.me/544243646260" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#especialidad">Especialidad</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#testimonios">Reseñas</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <ul>
+          <li>📍 Maracay - Aragua | Venezuela</li>
+          <li>📞 +54 4243 646260</li>
+          <li>✉️ hola@antojosoy.com</li>
+        </ul>
+        <div class="footer__hours">
+          <h4>Horarios</h4>
+          <p>Lun–Sáb: 9:00 AM – 9:00 PM</p>
+          <p>Dom: 10:00 AM – 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Antojos O&amp;Y. Hecho con <span class="text-highlight">❤️</span> y mucho chocolate.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
