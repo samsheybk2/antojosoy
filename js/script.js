@@ -371,8 +371,14 @@ function tortasDragEnd() {
   setTimeout(() => { tortasPaused = false; }, 400);
 }
 
+// Prevent text/image selection during drag
+tortasTrack.addEventListener('selectstart', (e) => e.preventDefault());
+
 // Mouse events
-tortasTrack.addEventListener('mousedown', (e) => tortasDragStart(e.clientX));
+tortasTrack.addEventListener('mousedown', (e) => {
+  e.preventDefault();
+  tortasDragStart(e.clientX);
+});
 document.addEventListener('mousemove', (e) => tortasDragMove(e.clientX));
 document.addEventListener('mouseup', tortasDragEnd);
 
